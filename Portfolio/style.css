@@ -1,0 +1,271 @@
+body{
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+/*Navbar Stars Here */
+.navbarHeading{
+    text-transform: uppercase !important;
+    font-weight: bold; 
+    font-family: sanfrancisco;
+}
+.navbarHeading:hover{
+    color: #ec5b53 !important;
+    transition: 0.3s !important;
+
+}
+.navLinks{
+    text-transform: uppercase !important;
+    font-weight: bold; 
+    font-family: sanfrancisco;
+}
+.navLinks:hover{
+    color: #ec5b53 !important;
+    transition: 0.3s !important
+    
+}
+.custom-toggler{
+    border-color: black !important;
+    font-size: 15px;
+}
+/*Navbar Ends Here */
+
+/*Banner Image Stars Here */
+#bgimage{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/b2.png");
+    background-size: cover;     
+    position: relative;
+
+}
+.bgimage-container{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 15px;
+}
+#bgimage h1{
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    font-family: DancingScript;
+    color: white;
+}
+#bgimage h2{
+    margin-bottom: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+}
+/*Banner Image Ends Here */
+
+/*Arrow To Move To Bottom Coding */
+#bgimage .btn-scroll{
+    transition: 0.4s;
+    color: rgba(255, 255, 255, 0.6);
+    animation: up-down 0.5s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down{
+    from {margin-top: 10px;}
+  to {margin-bottom: 10px;}
+}
+
+
+#bgimage .btn-scroll i{
+    font-size: 48px;    
+}
+#bgimage .btn-scroll:active{
+
+}
+#bgimage .btn-scroll:hover {
+    color:#ec5b53;
+    transition:0.5s;
+}
+/*Arrow To Move To Bottom Coding Ends Here */
+@font-face{
+    font-family: DancingScript;
+    src: url(Bootstrap/fonts/static/DancingScript-Regular.ttf);
+    font-style: normal;
+    font-weight: 100;
+}
+@font-face{
+    font-family: sanfrancisco;
+    src: url(Bootstrap/fonts/static/SF-UI-Display-Regular.otf);
+    font-style: normal;
+    font-weight: 100;
+}
+
+
+/* About section of Homepage starts here */
+
+
+#resume{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+    background-color: none;
+    padding:20px;
+}
+#resume .resumeContainer{
+    text-align: center !important;
+}
+#resume .jumbotron{
+    background-color: white;
+}
+
+#resume .resume-heading{
+    font-size: 40px;
+    font-family: sanfrancisco;
+}
+#resume .resumeButton{
+    background-color: #ec5b53;
+    border: none;
+    text-transform: uppercase;
+}
+#resume .resumeButton:hover{
+    color: black;
+    transition: 0.2s;
+    
+}
+/*About Section of homepage ends here */
+
+#services{
+    margin-top: 20px;
+    overflow: scroll;
+}
+#services .servicesHeading{
+   font-family: sanfrancisco;
+   text-transform: uppercase;
+   text-align: center;
+}
+#services .servicesContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px
+}
+#services .card{
+    margin: 10px;
+}
+
+
+
+#portfolio{
+    margin-top: 30px;
+    padding: 10px;
+}
+
+#portfolio .portfolioContainerImages{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#portfolio .card{
+    margin: 10px;
+
+}
+#portfolio .portfolioHeading{
+    font-family: sanfrancisco;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+
+#footer .footerContainer{
+    font-family: sanfrancisco;
+    text-transform: uppercase;
+    text-align: center;
+}
+#footer{
+    margin-top: 30px;
+    color: white;
+    background-color: #ec5b53;
+}
+#footer .footerContainer > h1{
+    text-transform: inherit;
+}
+
+
+
+/* About Page Coding */
+
+#about .text{
+    font-family: sanfrancisco;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+#about{
+    margin-top: 50px;
+
+}
+#about .aboutContent{
+    display: flex;
+    flex-direction: row;
+
+}
+.imageAbout{
+    width: 50%;
+    height: 100%;
+    /* justify-content: center;
+    flex-wrap: wrap; */
+}
+.aboutParagraph{
+    margin-top: 100px;
+}
+
+
+/*Contact Coding Starts Here */
+
+#contact{
+    margin-top: 100px;
+    border: 1px solid black;
+    padding: 20px;
+}
+#contact .text{
+    font-family: sanfrancisco;
+    text-transform: uppercase;
+    text-align: center;
+}
+#contact .contactButton{
+    background-color: #ec5b53;
+    border: none;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/* Media Query For the navbar heading */
+@media only screen and (max-width: 385px){
+    .navbarHeading{
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #about .aboutContent{
+        flex:none;
+       display: block;
+       /* align-items: center; */
+       text-align: center;
+    
+    }
+    #about .imageAbout{
+        width: 200px;
+    }
+
+}
