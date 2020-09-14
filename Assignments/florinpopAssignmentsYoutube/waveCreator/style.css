@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family:sans-serif;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+    width: 450px;
+}
+.circle {
+	background-color: BLACK;
+	border-radius: 50%;
+	cursor: pointer;
+	margin: 8px;
+	height: 14px;
+	width: 14px;
+	transition: transform 0.3s linear;
+}
+
+.circle.grow {
+	transform: scale(3);
+}
