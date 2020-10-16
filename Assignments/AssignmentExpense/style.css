@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+}
+.container{
+    padding: 20px;
+}
+.inputBox {
+    font-size: 20px;
+    padding: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    transition: 0.5s;
+}
+.inputBox:focus{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border: black;
+
+}
+.button {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 20px;
+}
+.addButton{
+    margin: 20px;
+}
+.expensesList{
+    list-style: none;
+
+}
+.expensesList li{
+    font-size: 50px;
+}

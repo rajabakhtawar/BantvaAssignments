@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="topHeading">
+            <h1>Expense Tracker</h1>
+        </div>
+        <div>
+            <input type="number" id="income" class="inputBox">
+            <button onclick="addIncome()" class="button">Add Income</button>
+            <h2 id="currentIncome"></h2>
+        </div>
+        <div id="expenseForm">
+            <label>
+                <p>Expense:</p>
+                <input type="number" id="expense" class="inputBox"/>
+            </label>
+            <label>
+                <p>Category:</p>
+                <select id="category" class="button">
+                    <option value="food">Food</option>
+                    <option value="bike">Bike</option>
+                    <option value="rent">Rent</option>
+                </select>
+            </label>
+            <label for="date">
+                <p>Date :</p>
+                <input type="date" id="date" class="inputBox">
+            </label>
+            <br />
+            <button onclick="addExpense()" class="button addButton">Add Expense</button>
+            <br />
+            <label>
+                <p>Show Expense:</p> <br />
+                <select id="showExpense" onchange="showFilterExpense()" class="button">
+                    <option value="all">All</option>
+                    <option value="food">Food</option>
+                    <option value="bike">Bike</option>
+                    <option value="rent">Rent</option>
+                </select>
+            </label>
+            <label>
+                <input type="date" id="dateFilter" onchange="showFilterExpense()" class="inputBox">
+            </label>
+
+
+
+        </div>
+        <h1>Transactions</h1>
+        <ul id="expenses" class="expensesList">
+
+        </ul>
+
+    </div>
+
+    <script>
+        var saving = 100;
+        var list = document.getElementById("expenses");
+        var expenses = [];
+
+        function Expense(expense, category, date) {
+            this.expense = expense;
+            this.category = category;
+            this.date = date;
+        }
+        function addIncome() {
+            saving += parseInt(document.getElementById("income").value)
+            showIncome()
+        }
+
+        function showIncome() {
+            document.getElementById("currentIncome").innerText = "Saving " + saving
+        }
+
+        function addExpense() {
+            var expense = document.getElementById("expense");
+            var category = document.getElementById("category");
+            var date = document.getElementById("date");
+            var newExpense = new Expense(parseInt(expense.value), category.value, date.value)
+            expenses.push(newExpense)
+            saving -= parseInt(expense.value)
+            showIncome()
+            console.log(expenses)
+            renderItem()
+        }
+
+        function renderItem() {
+            var item = "";
+            for (var i = 0; i < expenses.length; i++) {
+                item += "<li>" + expenses[i].expense + " - " + expenses[i].category + " - " + expenses[i].date + "</li>"
+            }
+
+            list.innerHTML = item
+            console.log(item)
+
+        }
+
+
+        function showFilterExpense() {
+            var category = document.getElementById("showExpense").value;
+            var dateFilter = document.getElementById("dateFilter").value;
+            var item = "";
+            for (var i = 0; i < expenses.length; i++) {
+                if (category === "all") {
+                    item += "<li>" + expenses[i].expense + " - " + expenses[i].category + " - " + expenses[i].date + "</li>"
+                }
+                else if (category === expenses[i].category && dateFilter === expenses[i].date) {
+                    item += "<li>" + expenses[i].expense + " - " + expenses[i].category + " - " + expenses[i].date + "</li>"
+                }
+                else if (category === expenses[i].category) {
+                    item += "<li>" + "No Item Found On This Date" + "</li>"
+
+                }
+
+                // else if(category ===  expenses[i].category) {
+                //     item += "<li>" + expenses[i].expense + " - " + expenses[i].category +"</li>"
+                // }
+
+            }
+            list.innerHTML = item
+            console.log(item)
+
+        }
+    </script>
+    
+</body>
+</html>
