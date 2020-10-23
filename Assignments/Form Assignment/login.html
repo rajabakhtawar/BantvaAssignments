@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 m-auto">
+
+                <h1 class="text-center text-info display-5">Login Form</h1>
+                <form id="login">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" required id="loginemail" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" required class="form-control" id="loginpassword">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <div id='loginmsg'></div>
+            </div>
+        </div>
+    </div>
+    <script src="app2.js"></script>
+</body>
+
+</html>

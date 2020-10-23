@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1 class="text-center text-info display-4">Home Page</h1>
+    <div id='homemsg'></div>
+    <a class="btn btn-success m-auto" href="./index.html">Logout</a>
+    <script>
+        let homemsg = document.getElementById('homemsg');
+            var user = sessionStorage.getItem('currentuser');
+         homemsg.innerHTML = `Hello !!!  ${user}`
+    </script>
+</body>
+</html>
